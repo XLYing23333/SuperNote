@@ -4,22 +4,22 @@
 
 ### Anaconda
 
-[Download](https://www.anaconda.com/products/individual)
+- [Download](https://www.anaconda.com/products/individual)
 
 ### Miniconda
 
-[Download](https://repo.anaconda.com/miniconda/)
+- [Download](https://repo.anaconda.com/miniconda/)
 
 
 ### Miniforge
 
-[Download](https://github.com/conda-forge/miniforge/releases/)
+- [Download](https://github.com/conda-forge/miniforge/releases/)
 
 ### 清华源
 
-[Miniconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)
+- [Miniconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)
 
-[MiniForge](https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/)
+- [MiniForge](https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/)
 
 ## Version
 
@@ -27,9 +27,13 @@ Suite for Anaconda\Miniconda\Miniforge
 
 ## Lazy loading and automatic recognition
 
-> 自动识别你的Conda命令并懒加载启用conda，加速Powershell的开启速度
+> Automatic recognition of your Conda commands and lazy loading of activation, accelerating the startup speed of PowerShell
 
-```profile
+Open Your Profile File: `notepad/subl/vim $PROFILE`
+
+Add the following code to the file:
+
+```shell
 $condaExe = "<PATH>\conda.exe"
 if (Test-Path $condaExe) {
     function global:conda {
@@ -39,3 +43,7 @@ if (Test-Path $condaExe) {
     }
 }
 ```
+
+> Replace `<PATH>` with the actual path to your `conda.exe` file.
+>
+> :warning: if you run `conda init powershell` before, you need to remove the raw hook code in your profile file.
